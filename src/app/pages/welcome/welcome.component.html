@@ -7,8 +7,17 @@
     <p class="px-3 fs-sm text-center">Mời bạn nhập tên để nhà hàng phục vụ nhanh và chính xác hơn nha ^^</p>
 
     <div class="d-flex flex-column gap-3 text-center ">
-        <input type="text" placeholder="Tên của bạn" class="form-control">
-        <button class="fs-bold btn btn-start c-text-primary">Bắt đầu</button>
+        <input 
+            type="text" 
+            placeholder="Tên của bạn"
+            class="form-control"
+            [(ngModel)]="username"
+            (keyup.enter)="onSubmit()">
+        <button 
+            class="fs-bold btn btn-start c-text-primary" 
+            [disabled]="!username"
+            (click)="onSubmit()"
+        ><b>Bắt đầu</b></button>
     </div>
     
 </section>
