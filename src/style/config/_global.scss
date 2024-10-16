@@ -1,0 +1,26 @@
+// Background Color
+.c-bg-primary {
+    background-color: var(--c-primary);
+}
+
+.c-bg-white {
+    background-color: var(--c-white);
+}
+
+// Start :: Text
+.c-text-white {
+    color: var(--c-white);
+}
+.c-text-black {
+    color: var(--c-black);
+}
+.c-text-primary {
+    color: var(--c-primary);
+}
+.c-text-secondary {
+    color: var(--c-secondary);
+}
+
+.flex-1 {
+    flex: 1;
+}

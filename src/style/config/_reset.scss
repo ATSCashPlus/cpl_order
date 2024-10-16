@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font: {
+        size: 16px;
+        family: "Inter", sans-serif;
+        weight: 400;
+        size: 0.875rem;
+    };
+    line-height: 17px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-weight: inherit;
+
+    &.btn {
+        font-size: inherit;
+    }
+}
+
+
+img {
+    display: inline-block;
+}
+
+input.form-control {
+    font-size: 0.875rem;
+}
+
+

@@ -1,0 +1,31 @@
+.banner-navigation{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.navigations {
+    bottom: 1rem;
+
+    .navigation {
+        width: .5rem;
+        height: .5rem;
+        border-radius: 50%;
+        border: 1px solid white;
+    }
+}
+
+.banners__wrapper {
+    position: relative;
+
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background-color: rgba(0,0,0,.3);
+    }
+}

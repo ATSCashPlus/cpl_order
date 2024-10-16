@@ -1,0 +1,35 @@
+.btn-goback {
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+
+    color: var(--c-primary);
+}
+
+.thumbnail {
+    width: 70px;
+    height: 70px;
+}
+
+.dish-title {
+    font-size: 14px;
+}
+
+.dish-description {
+    font-size: 9px;
+    color: #5C5C5C;
+}
+
+.price {
+    font-size: 18px;
+    color: var(--c-secondary);
+
+    &.outdated {
+        font-size: 11px;
+        color: #5C5C5C;
+    }
+
+    &.total {
+        font-size: 24px;
+    }
+}

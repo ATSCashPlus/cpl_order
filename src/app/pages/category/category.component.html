@@ -1,0 +1,21 @@
+<section class="pt-2">
+    <ul class="px-2 d-flex justify-content-between list-unstyled categories">
+        <li class="category"><button>COMBO</button></li>
+        <li class="c-text-primary category active"><button>Món gà</button></li>
+        <li class="category"><button>Cơm & Canh</button></li>
+        <li class="category"><button>Các món lẩu</button></li>
+        <li class="category"><button>Đồ uống</button></li>
+    </ul>
+
+    <h1 class="text-uppercase text-center c-text-secondary title">Món Gà</h1>
+
+    <ul class="list-unstyled dishes" [ngStyle]="{marginBottom: '64px'}">
+        @for(dish of dishes; track $index) {
+            <li class="mt-2"><app-dish [dish]="dish"></app-dish></li>
+        }
+    </ul>
+
+    <div class="position-fixed cart">
+        <app-cart></app-cart>
+    </div>
+</section>
