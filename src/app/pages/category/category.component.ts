@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { concat, forkJoin, of } from 'rxjs';
+import { state, style, transition, trigger, animate } from '@angular/animations';
 // Components
 import { DishComponent } from './dish/dish.component';
 import { CartComponent } from './cart/cart.component';
@@ -12,7 +13,6 @@ import { CartService } from 'src/app/services/cart.service';
 import { IDish } from '@models/dish.interface';
 import { ICategory } from '@models/category.interface';
 
-
 @Component({
   selector: 'app-category',
   standalone: true,
@@ -23,7 +23,7 @@ import { ICategory } from '@models/category.interface';
   ],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoryComponent implements OnInit{
   private categoryService = inject(CategoryService);
@@ -33,6 +33,11 @@ export class CategoryComponent implements OnInit{
   selectingDishes = signal<IDish[]>([]);
   selectedCategoryTitle = signal('');
   categories = signal<ICategory[]>([]);
+
+  isOpen = true;
+  onToggle() {
+    this.isOpen = !this.isOpen;
+  }
 
   ngOnInit(): void {
     forkJoin({

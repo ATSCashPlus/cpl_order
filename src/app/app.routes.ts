@@ -26,4 +26,9 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/selecting-dishes/selecting-dishes.component').then((c) => c.SelectingDishesComponent),
         data: { showHerroBanner: false }
     },
+    {
+        path: 'waiting-room',
+        loadComponent: () => import('./pages/waiting-room/waiting-room.component').then((c) => c.WaitingRoomComponent),
+        data: { showHerroBanner: false }
+    },
 ];

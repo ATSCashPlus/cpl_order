@@ -23,4 +23,8 @@ export class NavigationService {
   gotoSelectingDishes() {
     this.router.navigate(['selecting']);
   }
+
+  gotoWaitingRoom() {
+    this.router.navigate(['waiting-room']);
+  }
 }

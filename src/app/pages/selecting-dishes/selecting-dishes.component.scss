@@ -46,7 +46,8 @@
     }
 }
 
-.btn-order {
+.btn-order,
+.btn.c-bg-primary {
     height: 35px;
 
     &:hover {
@@ -54,3 +55,15 @@
     }
 }
 
+.confirm-dialog {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0,0,0,.75);
+}
+
+.btn-large {
+    height: 36px;
+}

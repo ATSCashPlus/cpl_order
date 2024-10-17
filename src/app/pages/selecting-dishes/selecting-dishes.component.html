@@ -49,5 +49,21 @@
             <p class="mb-5 text-end c-text-primary">Hoàn ngay <strong>36k</strong> với <strong>CashPlus</strong></p>
         </div>
     </div>
-    <button class="mx-3 d-block text-white btn c-bg-primary btn-order">GỬI YÊU CẦU GỌI MÓN</button>
+    <button 
+        class="mx-3 d-block text-white btn c-bg-primary btn-order"
+        (click)="onOrder()"
+    >GỬI YÊU CẦU GỌI MÓN</button>
 </section>
+
+@if( isShowConfirmDialog() ) {
+    <div @fadeInOut class="position-fixed d-flex align-items-center justify-content-center confirm-dialog">
+        <div class="p-4 rounded bg-white">
+            <p class="mb-4 ">Bạn chắc chắn đặt những món đã chọn?</p>
+            <div class="d-flex gap-3">
+                <button class="flex-1 btn btn-secondary btn-large" (click)="onCloseConfirmDialog()">Không</button>
+                <button class="flex-1 btn c-bg-primary text-white btn-large" (click)="onConfirm()">Đặt món</button>
+            </div>
+        </div>
+    </div>
+}
+
