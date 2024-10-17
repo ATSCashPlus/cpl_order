@@ -18,7 +18,12 @@ export const routes: Routes = [
     },
     {
         path: 'ordered',
-        loadComponent: () => import('./pages/ordered/ordered.component').then((c) => c.OrderedComponent),
-        data: { showHerroBanner: true }
+        loadComponent: () => import('./pages/ordered-dishes/ordered-dishes.component').then((c) => c.OrderedDishesComponent),
+        data: { showHerroBanner: false }
+    },
+    {
+        path: 'selecting',
+        loadComponent: () => import('./pages/selecting-dishes/selecting-dishes.component').then((c) => c.SelectingDishesComponent),
+        data: { showHerroBanner: false }
     },
 ];

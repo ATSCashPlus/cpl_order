@@ -5,26 +5,34 @@
         </div>
     
         <div class="flex-1">
-            <h4 class="dish-title">Gà Viên Hành Tây Sốt Kem</h4>
-            <p class="mb-1 lh-sm dish-description">Suất gà dành cho 1-2 người. Gồm gà viên chiên quyện cùng sốt kem béo ngậy.</p>
+            <h4 class="dish-title">{{dish().title}}</h4>
+            <p class="mb-1 lh-sm dish-description">{{dish().description}}</p>
             <div class="d-flex gap-2">
-                <strong class="price">180.000đ</strong>
-                <del class="price outdated">199.000đ</del>
+                <strong class="price">{{dish().price | currency: 'VND'}}</strong>
+                @if(dish().priceOutdated) {
+                    <del class="price outdated">{{dish().priceOutdated | currency: 'VND'}}</del>
+                }
             </div>
         </div>
     </div>
     
 
-    <div class="d-flex align-items-center gap-2">
-        <button class="d-flex align-items-center justify-content-center btn-amount">
+    <div class="d-flex align-items-center">
+        <button class="d-flex align-items-center justify-content-center btn-amount" (click)="onUpdateQuantity(-1)">
             <svg width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.5 2H7.5C7.77614 2 8 1.55228 8 1C8 0.447719 7.77614 0 7.5 0H0.5C0.223859 0 0 0.447719 0 1C0 1.55228 0.223859 2 0.5 2Z" fill="white"/>
             </svg>
         </button>
-        <span>0</span>
-        <button class="d-flex align-items-center justify-content-center btn-amount">
-            <svg width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.5 2H7.5C7.77614 2 8 1.55228 8 1C8 0.447719 7.77614 0 7.5 0H0.5C0.223859 0 0 0.447719 0 1C0 1.55228 0.223859 2 0.5 2Z" fill="white"/>
+        <span class="d-block text-center quantity">{{dish().quantity}}</span>
+        <button class="d-flex align-items-center justify-content-center btn-amount" (click)="onUpdateQuantity(1)">
+            <svg fill="none" xmlns="http://www.w3.org/2000/svg"
+                width="8" height="8" viewBox="0 0 45.402 45.402">
+                <g>
+                    <path d="M41.267,18.557H26.832V4.134C26.832,1.851,24.99,0,22.707,0c-2.283,0-4.124,1.851-4.124,4.135v14.432H4.141
+                        c-2.283,0-4.139,1.851-4.138,4.135c-0.001,1.141,0.46,2.187,1.207,2.934c0.748,0.749,1.78,1.222,2.92,1.222h14.453V41.27
+                        c0,1.142,0.453,2.176,1.201,2.922c0.748,0.748,1.777,1.211,2.919,1.211c2.282,0,4.129-1.851,4.129-4.133V26.857h14.435
+                        c2.283,0,4.134-1.867,4.133-4.15C45.399,20.425,43.548,18.557,41.267,18.557z" fill="white"/>
+                </g>
             </svg>
         </button>
     </div>

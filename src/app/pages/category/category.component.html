@@ -1,21 +1,29 @@
 <section class="pt-2">
     <ul class="px-2 d-flex justify-content-between list-unstyled categories">
-        <li class="category"><button>COMBO</button></li>
-        <li class="c-text-primary category active"><button>Món gà</button></li>
-        <li class="category"><button>Cơm & Canh</button></li>
-        <li class="category"><button>Các món lẩu</button></li>
-        <li class="category"><button>Đồ uống</button></li>
-    </ul>
-
-    <h1 class="text-uppercase text-center c-text-secondary title">Món Gà</h1>
-
-    <ul class="list-unstyled dishes" [ngStyle]="{marginBottom: '64px'}">
-        @for(dish of dishes; track $index) {
-            <li class="mt-2"><app-dish [dish]="dish"></app-dish></li>
+        @for(category of categories(); track category.id) {
+            <li 
+                class="category"
+                [class.c-text-primary]="category.selected"
+                [class.active]="category.selected"
+            ><button (click)="onSelectCategory(category)">{{category.title}}</button></li>
         }
     </ul>
 
-    <div class="position-fixed cart">
-        <app-cart></app-cart>
-    </div>
+    <h1 class="text-uppercase text-center c-text-secondary title">{{selectedCategoryTitle()}}</h1>
+
+    <ul class="list-unstyled dishes" [ngStyle]="{marginBottom: '64px'}">
+        @for(dish of dishes(); track $index) {
+            <li class="mt-2"><app-dish 
+                [dish]="dish"
+                (updateQuantity)="onUpdateQuantity($event)"
+            ></app-dish></li>
+        }
+    </ul>
+
+    @if ( selectingDishes().length > 0 ) {
+        <div class="position-fixed cart">
+            <app-cart [selectingDishes]="selectingDishes()"></app-cart>
+        </div>
+    }
+    
 </section>

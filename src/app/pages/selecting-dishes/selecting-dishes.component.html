@@ -1,0 +1,53 @@
+<section class="pb-3 d-flex flex-column justify-content-between page">
+    <div>
+        <div class="mb-4 position-relative d-flex justify-content-center align-items-center border-bottom page-title-control">
+            <button class="position-absolute btn-goback" (click)="onGotoCategory()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+                  </svg>
+            </button>
+            <h5 class="mb-0">Các món đang chọn ({{selectingDishes() | total: 'dishes'}})</h5>
+        </div>
+    
+        <div class="px-3">
+            <ul class="mb-4 list-unstyled">
+                @for(dish of selectingDishes(); track dish.id; let first=$first) {
+                    <li [class.mt-3]="!first">
+                        <div class="d-flex align-items-center justify-content-between gap-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="thumbnail">
+                                    <img [src]="dish.avatar" alt="dish" class="d-block w-100">
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-self-stretch flex-1">
+                                    <div class="dish-text">
+                                        <p class="mb-1 text-truncate dish-title">{{dish.title}} {{dish.title}}</p>
+                                        <p class="text-truncate dish-description">{{dish.description}}</p>
+                                    </div>
+                                    
+                                    <p>x {{dish.quantity}}</p>
+                                </div>
+                            </div>
+            
+                            <div class="text-end">
+                                <p class="price outdated"><del>{{dish.priceOutdated | currency: 'VND'}}</del></p>
+                                <p class="price"><b>{{dish | total: 'price' | currency: 'VND'}}</b></p>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        
+            <div class="mb-5">
+                <h6>Ghi chú</h6>
+                <textarea class="form-control" rows="2" placeholder="Thêm ghi chú"></textarea>
+            </div>
+    
+            <div class="mb-3 d-flex justify-content-between lh-1">
+                <h6>Tổng tiền tạm tính</h6>
+                <p class="price total"><b>{{selectingDishes() | total: 'price' | currency: 'VND'}}</b></p>
+            </div>
+            <p class="mb-5 text-end c-text-primary">Hoàn ngay <strong>36k</strong> với <strong>CashPlus</strong></p>
+        </div>
+    </div>
+    <button class="mx-3 d-block text-white btn c-bg-primary btn-order">GỬI YÊU CẦU GỌI MÓN</button>
+</section>

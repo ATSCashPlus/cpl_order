@@ -1,3 +1,5 @@
 <app-header></app-header>
-<app-banners></app-banners>
+@if(isShowHerroBanner()) {
+    <app-banners></app-banners>
+}
 <router-outlet></router-outlet>

@@ -1,11 +1,14 @@
-<button class="px-3 w-100 text-white d-flex align-items-center justify-content-between cart">
+<button 
+    class="px-3 w-100 text-white d-flex align-items-center justify-content-between cart"
+    (click)="onGotoSelectingDishes()"
+>
     <span class="d-flex align-items-center gap-2">
         <img src="images/icons/shopping-cart.svg" alt="shopping cart">
-        <span>02</span>
+        <span>{{selectingDishes() | total: 'dishes' | number: '2.0-0'}}</span>
     </span>
 
     <span class="d-flex align-items-center gap-2">
-        <span>360.000đ</span>
+        <span>{{selectingDishes() | total: 'price' | currency: 'VND'}}</span>
         <img src="images/icons/chevron-right.svg" alt="go to cart detail">
     </span>
 </button>
