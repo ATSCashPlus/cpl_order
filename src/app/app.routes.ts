@@ -31,4 +31,9 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/waiting-room/waiting-room.component').then((c) => c.WaitingRoomComponent),
         data: { showHerroBanner: false }
     },
+    {
+        path: 'bill',
+        loadComponent: () => import('./pages/bill/bill.component').then((c) => c.BillComponent),
+        data: { showHerroBanner: false }
+    },
 ];

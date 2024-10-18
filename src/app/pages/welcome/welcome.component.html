@@ -1,7 +1,7 @@
 <section class="d-flex flex-column gap-3 welcome">
     <div>
         <img src="images/welcome.png" alt="welcome">
-        <p class="fw-semibold">Nollowa Chicken xin kính chào quý khách!</p>
+        <p class="fs-lg fw-semibold">Nollowa Chicken xin kính chào quý khách!</p>
     </div>
     
     <p class="px-3 fs-sm text-center">Mời bạn nhập tên để nhà hàng phục vụ nhanh và chính xác hơn nha ^^</p>
@@ -14,10 +14,10 @@
             [(ngModel)]="username"
             (keyup.enter)="onSubmit()">
         <button 
-            class="fs-bold btn btn-start c-text-primary" 
+            class="fw-bold btn btn-start" 
             [disabled]="!username"
             (click)="onSubmit()"
-        ><b>Bắt đầu</b></button>
+        >Bắt đầu</button>
     </div>
     
 </section>

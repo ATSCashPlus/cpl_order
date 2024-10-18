@@ -1,15 +1,23 @@
-<section>
+<section class="px-4 d-flex flex-column justify-content-center gap-5 waitingu-room-page">
     <div>
-        <img src="images/check.png" alt="checking">
-        <p>Gọi món thành công, vui lòng chờ nhân viên xác nhận!</p>
-        <p><span>Lưu ý:</span> Nếu đợi quá lâu hoặc thay đổi về món đã gọi, bạn có thể dùng chức năng <span>Gọi nhân viên</span> ở màn hình chính hoặc màn hình phản hồi</p>
-        <button class="btn">Đồng Ý</button>
+        <div class="mb-4 text-center">
+            <img src="images/check.png" alt="checking" class="mb-4">
+            <p class="mx-auto w-75 success-message">Gọi món thành công, vui lòng chờ nhân viên xác nhận!</p>
+        </div>
+        
+
+        <p class="mb-4 py-2 px-3 rounded note-message"><span class="fw-bold">Lưu ý:</span> Nếu đợi quá lâu hoặc thay đổi về món đã gọi, bạn có thể dùng chức năng <span class="fw-bold">Gọi nhân viên</span> ở màn hình chính hoặc màn hình phản hồi</p>
+        <button class="mx-auto d-block btn text-white c-bg-primary w-50">Đồng Ý</button>
     </div>
 
-    <div>
-        <img src="images/cashplus-logo.png" alt="CashPlus">
+    <div class="d-flex gap-2 cashplus">
         <div>
-            <p>Thanh toán qua CashPlus để được hoàn tiền ngay 10% hóa đơn tương đương 36k </p>
+            <img src="images/cashplus-logo.png" alt="CashPlus" class="d-block" width="50">
+        </div>
+        
+        <div class="d-flex flex-column justify-content-between flex-1 gap-1">
+            <p>Thanh toán qua <span class="fw-bold">CashPlus</span> để được hoàn tiền ngay <span class="fw-bold c-text-secondary">10%</span> hóa đơn tương đương <b class="fw-bold c-text-secondary">36k</b></p>
+            <button class="py-0 px-1 btn btn-download">Tải Cashplus ngay</button>
         </div>
     </div>
 </section>

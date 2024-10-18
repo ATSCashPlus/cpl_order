@@ -1,11 +1,10 @@
+@use 'screen';
+
 .welcome {
     padding: 30px 40px;
 }
 
-.fs-sm {
-    font-size: 12px;
-}
-
 .btn-start {
     background-color: var(--c-secondary-100);
+    color: var(--c-primary);
 }
