@@ -8,7 +8,7 @@
 html, body {
     font: {
         size: 16px;
-        family: "Poppins", sans-serif;
+        family: "Inter", sans-serif;
         weight: 400;
     };
     line-height: 1.25;
@@ -35,8 +35,10 @@ img {
     display: inline-block;
 }
 
-input.form-control {
-    font-size: 0.875rem;
+input {
+    &::placeholder {
+        color: #9b9999 !important;
+    }
 }
 
 

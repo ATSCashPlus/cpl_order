@@ -1,7 +1,12 @@
 @use 'screen';
 
 .welcome {
-    padding: 30px 40px;
+    min-height: 300px;
+    height: calc(100vh - 70px - 190px);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    line-height: 29px;
+
 }
 
 .btn-start {

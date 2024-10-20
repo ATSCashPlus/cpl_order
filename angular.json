@@ -16,7 +16,10 @@
         },
         "@schematics/angular:pipe": {
           "skipTests": true
-        }
+        },
+          "@schematics/angular:directive": {
+              "skipTests": true
+          }
       },
       "root": "",
       "sourceRoot": "src",

@@ -26,6 +26,7 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["src/app/components/*"],
+        "directives/*": ["src/app/directives/*"],
       "@layouts/*": ["src/app/layouts/*"],
       "@models/*": ["src/app/models/*"]
     }

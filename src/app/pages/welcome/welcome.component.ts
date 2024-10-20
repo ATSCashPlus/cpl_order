@@ -3,11 +3,19 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LayoutService } from 'src/app/services/layout.service';
+import {CashplusNotificationComponent} from '@components/cashplus-notification/cashplus-notification.component';
+import {AutoSelectDirective} from 'directives/auto-select.directive';
 
 @Component({
   selector: 'app-welcome',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    CashplusNotificationComponent,
+    AutoSelectDirective,
+    AutoSelectDirective
+  ],
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
