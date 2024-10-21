@@ -2,7 +2,7 @@
 
 .welcome {
     min-height: 300px;
-    height: calc(100vh - 70px - 190px);
+    height: calc(100vh - 70px - 190px - 1rem);
     padding-top: 40px;
     padding-bottom: 40px;
     line-height: 29px;
@@ -10,6 +10,6 @@
 }
 
 .btn-start {
-    background-color: var(--c-secondary-300);
+    background-color: var(--c-secondary-100);
     color: var(--c-primary);
 }

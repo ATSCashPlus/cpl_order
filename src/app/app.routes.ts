@@ -7,7 +7,7 @@ export const routes: Routes = [
         data: { 
             showHerroBanner: true,
             showSearchBar: false,
-            showHeader: false, 
+            showHeader: true, 
         },
     },
     {
@@ -16,7 +16,7 @@ export const routes: Routes = [
         data: { 
             showHerroBanner: true,
             showSearchBar: false,
-            showHeader: false, 
+            showHeader: true, 
         },
     },
     {
