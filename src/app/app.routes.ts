@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'welcome',
         loadComponent: () => import('./pages/home/home.component').then((c) => c.HomeComponent),
         data: { 
             showHerroBanner: true,
@@ -11,7 +11,7 @@ export const routes: Routes = [
         },
     },
     {
-        path: 'welcome',
+        path: '',
         loadComponent: () => import('./pages/welcome/welcome.component').then((c) => c.WelcomeComponent),
         data: { 
             showHerroBanner: true,

@@ -32,6 +32,6 @@ export class WelcomeComponent {
       tableNo: 20
     });
 
-    this.router.navigate(['']);
+    this.router.navigate(['welcome']);
   }
 }
