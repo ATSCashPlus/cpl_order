@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
 // Components
 import { InputComponent } from '@components/input/input.component';
 // Services
-import { LayoutService } from 'src/app/services/layout.service';
+import { LayoutService } from '@services/layout.service';
+import { NavigationService } from '@services/navigation.service';
 
 @Component({
   selector: 'app-home',
@@ -19,10 +19,15 @@ import { LayoutService } from 'src/app/services/layout.service';
 })
 export class HomeComponent {
   layoutService = inject(LayoutService);
-  router = inject(Router);
+  navigationService = inject(NavigationService);
 
 
   onGotoOrderedDishes() {
-    this.router.navigate(['ordered']);
+    this.navigationService.goToOrderedDishes();
+  }
+
+  onGotoCategory() {
+    console.log('go to category')
+    this.navigationService.goToCategory()
   }
 }

@@ -1,5 +1,6 @@
 .page {
-    min-height: calc(100vh - 54px);
+    min-height: 300px;
+    height: calc(100vh);
 }
 
 .page-title-control {
@@ -15,17 +16,14 @@
 }
 
 .thumbnail {
-    width: 55px;
-    height: 55px;
+    width: 64px;
+    height: 64px;
 }
 
 .dish-text {
-    max-width: 190px;
+    max-width: 160px;
 }
 
-.dish-title {
-    font-size: 14px;
-}
 
 .dish-description {
     font-size: 9px;
@@ -33,21 +31,27 @@
 }
 
 .price {
-    font-size: 18px;
     color: var(--c-secondary);
 
     &.outdated {
         font-size: 11px;
         color: #5C5C5C;
     }
+}
 
-    &.total {
-        font-size: 24px;
-    }
+.btn-remove {
+    top: 1rem;
+    right: 1rem;
+
+    width: 1.25rem;
+    height: 1.25rem;
+    transform: translate(50%, -50%);
+    background-color: var(--c-gray-800);
 }
 
 .btn-order,
-.btn.c-bg-primary {
+.btn.c-bg-primary
+ {
     height: 35px;
 
     &:hover {
@@ -65,5 +69,5 @@
 }
 
 .btn-large {
-    height: 36px;
+    height: 35px;
 }

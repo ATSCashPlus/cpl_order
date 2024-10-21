@@ -1,15 +1,20 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { NavigationService } from 'src/app/services/navigation.service';
-import { IDish } from '@models/dish.interface';
-import { TotalPipe } from 'src/app/pipes/total.pipe';
 import { CommonModule } from '@angular/common';
+// Pipes
+import { DotSeparatorPipe } from '@pipes/dot-separator.pipe';
+import { TotalPipe } from '@pipes/total.pipe';
+import { RouterModule } from '@angular/router';
+// Models
+import { IDish } from '@models/dish.interface';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
   imports: [
+    RouterModule,
     CommonModule,
     TotalPipe,
+    DotSeparatorPipe
   ],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
@@ -17,10 +22,4 @@ import { CommonModule } from '@angular/common';
 })
 export class CartComponent {
   selectingDishes = input.required<IDish[]>();
-
-  private navigationService = inject(NavigationService);
-
-  onGotoSelectingDishes() {
-    this.navigationService.gotoSelectingDishes();
-  }
 }

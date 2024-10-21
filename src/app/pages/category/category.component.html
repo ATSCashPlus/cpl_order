@@ -1,19 +1,19 @@
-<section class="pt-2">
-    <ul class="px-2 d-flex justify-content-between list-unstyled categories">
+<section class="pt-2" class="category-page">
+    <ul class="d-flex justify-content-between list-unstyled text-nowrap overflow-auto bg-white categories">
         @for(category of categories(); track category.id) {
             <li 
                 class="category"
                 [class.c-text-primary]="category.selected"
                 [class.active]="category.selected"
-            ><button (click)="onSelectCategory(category)">{{category.title}}</button></li>
+            ><button class="border-0 btn fs-sm" (click)="onSelectCategory(category)">{{category.title}}</button></li>
         }
     </ul>
 
-    <h1 class="text-uppercase text-center c-text-secondary title">{{selectedCategoryTitle()}}</h1>
+    <p class="px-3 text-uppercase c-text-secondary">{{selectedCategoryTitle()}}</p>
 
-    <ul class="list-unstyled dishes" [ngStyle]="{marginBottom: '64px'}">
-        @for(dish of dishes(); track $index) {
-            <li class="mt-2"><app-dish 
+    <ul class="px-3 py-2 list-unstyled dishes" [ngStyle]="{marginBottom: '64px'}">
+        @for(dish of dishes(); track $index; let first=$first) {
+            <li class="border rounded overflow-hidden" [class.mt-2]="!first"><app-dish 
                 [dish]="dish"
                 (updateQuantity)="onUpdateQuantity($event)"
             ></app-dish></li>
@@ -21,7 +21,7 @@
     </ul>
 
     @if ( selectingDishes().length > 0 ) {
-        <div class="position-fixed cart">
+        <div @slideInOutAnimation class="position-fixed cart">
             <app-cart [selectingDishes]="selectingDishes()"></app-cart>
         </div>
     }

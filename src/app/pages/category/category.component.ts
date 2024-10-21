@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { concat, forkJoin, of } from 'rxjs';
-import { state, style, transition, trigger, animate } from '@angular/animations';
+import { forkJoin } from 'rxjs';
+import { style, transition, trigger, animate } from '@angular/animations';
 // Components
 import { DishComponent } from './dish/dish.component';
 import { CartComponent } from './cart/cart.component';
@@ -24,6 +24,17 @@ import { ICategory } from '@models/category.interface';
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [
+    trigger('slideInOutAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(100%)' }),
+        animate('300ms ease-in', style({ opacity: 1, transform: 'translateY(0)' }))
+      ]),
+      transition(':leave', [
+        animate('300ms ease-out', style({ opacity: 0, transform: 'translateY(100%)' }))
+      ])
+    ])
+  ]
 })
 export class CategoryComponent implements OnInit{
   private categoryService = inject(CategoryService);

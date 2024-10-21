@@ -6,15 +6,22 @@ import { CartService } from 'src/app/services/cart.service';
 import { NavigationService } from 'src/app/services/navigation.service';
 // Pipes
 import { TotalPipe } from 'src/app/pipes/total.pipe';
+import { DotSeparatorPipe } from '@pipes/dot-separator.pipe';
 // Models
 import { IDish } from '@models/dish.interface';
+import { RouterModule } from '@angular/router';
 
 
 
 @Component({
   selector: 'app-selecting-dishes',
   standalone: true,
-  imports: [CommonModule, TotalPipe],
+  imports: [
+    RouterModule,
+    CommonModule, 
+    TotalPipe,
+    DotSeparatorPipe
+  ],
   templateUrl: './selecting-dishes.component.html',
   styleUrl: './selecting-dishes.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

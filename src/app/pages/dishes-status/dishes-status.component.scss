@@ -1,0 +1,23 @@
+.messages {
+    height: calc(100vh - 70px - 68px);
+}
+
+.message {
+    max-width: 75%;
+
+    .title {
+        height: 20px;
+        border-radius: 3px;
+        background-color: var(--c-primary-200);
+        font-size: 11px;
+    }
+
+    &--user {
+        background-color: var(--c-secondary-100);
+        border: 1px solid var(--c-secondary-300);
+    }
+}
+
+.btn-order {
+   height: 35px; 
+}

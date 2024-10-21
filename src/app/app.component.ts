@@ -5,6 +5,7 @@ import { ActivatedRoute, Router, RouterModule, NavigationEnd } from '@angular/ro
 import { BannersComponent } from '@layouts/banners/banners.component';
 import { HeaderComponent } from '@layouts/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SearchBarComponent } from '@layouts/search-bar/search-bar.component';
 
 
 @Component({
@@ -16,6 +17,7 @@ import { HomeComponent } from './pages/home/home.component';
     HeaderComponent,
     BannersComponent,
     HomeComponent,
+    SearchBarComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -24,6 +26,8 @@ export class AppComponent implements OnInit {
   activatedRoute = inject(ActivatedRoute);
   router = inject(Router);
   isShowHerroBanner = signal(false);
+  isShowHeader = signal(false);
+  isShowSearchbar = signal(false);
 
   ngOnInit(): void {
     this.router.events
@@ -34,8 +38,9 @@ export class AppComponent implements OnInit {
           currentRoute = currentRoute.firstChild;
         }
         currentRoute.data.subscribe(data => {
-          console.log('Activated child route data:', data);
           this.isShowHerroBanner.set(data['showHerroBanner']);
+          this.isShowHeader.set(data['showHeader']);
+          this.isShowSearchbar.set(data['showSearchBar']);
         });
       });
 

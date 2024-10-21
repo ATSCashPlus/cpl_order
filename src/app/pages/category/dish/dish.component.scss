@@ -1,11 +1,10 @@
+@use 'sass:color';
+
 .thumbnail {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
 }
 
-.dish-title {
-    font-size: 14px;
-}
 
 .dish-description {
     font-size: 9px;
@@ -13,22 +12,32 @@
 }
 
 .price {
-    font-size: 11px;
     color: var(--c-secondary);
+    font-weight: 500;
 
     &.outdated {
-        font-size: 9px;
+        font-size: 11px;
         color: #5C5C5C;
     }
 }
 
+.btn-amount,
+.btn-add {
+    width: 20px;
+    height: 20px;
+}
+
+
 .btn-amount {
-    width: 14px;
-    height: 14px;
-    background-color: #27383E;
-    border-radius: 2px;
+    border: 1px solid currentColor;
+    color: grey;
+
+    &--increase {
+        color: var(--c-primary);
+        background-color: var(--c-primary-100);
+    }
 }
 
 .quantity {
-    min-width: 20px;
+    min-width: 24px;
 }

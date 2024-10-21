@@ -1,11 +1,6 @@
 .waitingu-room-page {
-    height: calc(100vh - 54px);
+    height: calc(100vh - 70px);
     min-height: 300px;
-    font-size: 16px;
-}
-
-.success-message {
-    font-size: 1em;
 }
 
 .note-message {
@@ -19,7 +14,7 @@
 
 .btn-download {
     width: fit-content;
-    background-color: var(--c-secondary-100);
+    background-color: var(--c-secondary-300);
     color: var(--c-primary);
     font-weight: 600;
 }
