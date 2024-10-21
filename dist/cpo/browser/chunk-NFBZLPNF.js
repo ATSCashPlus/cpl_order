@@ -1,0 +1,1 @@
+import{N as t,i as r}from"./chunk-ZC7KW5BE.js";var a=class e{user=new r({username:"Vu Tran",tableNo:20});isShowSidebar=new r(!1);setUserInfo(o){this.user.next(o)}static \u0275fac=function(n){return new(n||e)};static \u0275prov=t({token:e,factory:e.\u0275fac,providedIn:"root"})};export{a};
